@@ -1,0 +1,32 @@
+name: Run Checks on dotfiles
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  # Needed if you want to publish security issues to GitHub Security tab
+  security-events: write
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run GitLeaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          config-path: .github/gitleaks.toml # Optional: custom config file
+          verbose: true
+          report-format: sarif # Creates a SARIF report for GitHub Security tab
+          report-path: gitleaks-report.sarif
