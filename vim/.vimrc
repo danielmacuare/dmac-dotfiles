@@ -1,3 +1,4 @@
+" TARGET=~/.vimrc
 " https://github.com/hendrikmi/dotfiles/blob/main/vim/.vimrc
 " ========================================
 " Options

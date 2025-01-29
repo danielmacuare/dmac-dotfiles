@@ -1,3 +1,4 @@
+-- TARGET=~/.config/wezterm/wezterm.lua
 -- Pull in the Wezterm
 local wezterm = require("wezterm")
 
