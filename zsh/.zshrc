@@ -15,7 +15,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	#autojump
 	#copypath
-	#git
+	git
 	#terraform
 	#thefuck
 	zsh-syntax-highlighting
