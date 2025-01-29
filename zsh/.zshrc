@@ -17,7 +17,6 @@ plugins=(
 	#copypath
 	git
 	#terraform
-	#thefuck
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )
