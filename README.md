@@ -40,7 +40,7 @@ cd dotfiles
 
 ```
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc    # Symlinking a file
-ln -s ~/dotfiles/karabiner/ ~/.config/  # Symlinking a folder
+ln -sf ~/dotfiles/karabiner/ ~/.config/  # Symlinking a folder
 ```
 
 The repository includes a `.pre-commit-config.yaml` file that checks for:
