@@ -51,7 +51,3 @@ set statusline+=%= " Switch to the right side
 set statusline+=%l " Current line
 set statusline+=/ " Separator
 set statusline+=%L " Total lines
-
-" Needs git clone git@github.com:christoomey/vim-tmux-navigator.git ~/.vim/pack/plugins/start/vim-tmux-navigator
-Plugin 'christoomey/vim-tmux-navigator'
-
