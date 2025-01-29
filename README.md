@@ -39,7 +39,8 @@ cd dotfiles
 2. (Optional) Create symlinks yourself or use something like GNU Stow
 
 ```
-ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc    # Symlinking a file
+ln -s ~/dotfiles/karabiner/ ~/.config/  # Symlinking a folder
 ```
 
 The repository includes a `.pre-commit-config.yaml` file that checks for:
