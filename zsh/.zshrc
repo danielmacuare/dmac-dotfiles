@@ -13,7 +13,7 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-	#autojump
+    autojump
 	#copypath
 	git
 	#terraform
