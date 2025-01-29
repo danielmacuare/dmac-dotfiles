@@ -54,7 +54,7 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ### Sourcing files
-source $HOME/.aliases
+source $XDG_CONFIG_HOME/others/.aliases
 
 if [ -f "$HOME/.custom_functions" ]; then
     source "$HOME/.custom_functions"
