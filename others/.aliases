@@ -1,4 +1,4 @@
 # TARGET = ~/.config/others/.aliases
 alias cat=bat
 alias sed=gsed
-alias l="eza --icons -lah"
+alias l="eza --icons -lah -s=type"
