@@ -6,11 +6,12 @@ return {
         config = function()
             require("catppuccin").setup({
                 flavour = "mocha", -- Options: latte, frappe, macchiato, mocha
+                -- https://github.com/catppuccin/nvim#integrations
                 integrations = {
                     --cmp = true,
                     gitsigns = true,
                     --mason = true,
-                    --lualine = true,
+                    -- lualine = true, -- DIDN'T WORK FOR CATPUCCIN
                     neotree = true,
                     --treesitter = true,
                     notify = false,

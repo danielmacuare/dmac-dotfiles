@@ -84,7 +84,9 @@ return {
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        theme = themes[env_var_nvim_theme], -- Set theme based on environment variable
+        --theme = themes[env_var_nvim_theme], -- Set theme based on environment variable
+        --theme = 'nord',
+        theme = 'onedark',
         -- Some useful glyphs:
         -- https://www.nerdfonts.com/cheat-sheet
         --        
