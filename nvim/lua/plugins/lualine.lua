@@ -86,7 +86,8 @@ return {
         icons_enabled = true,
         --theme = themes[env_var_nvim_theme], -- Set theme based on environment variable
         --theme = 'nord',
-        theme = 'onedark',
+        --theme = 'onedark',
+        theme = 'dracula',
         -- Some useful glyphs:
         -- https://www.nerdfonts.com/cheat-sheet
         --        
