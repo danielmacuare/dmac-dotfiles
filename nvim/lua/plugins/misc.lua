@@ -17,7 +17,7 @@ return {
         'tpope/vim-rhubarb',
     },
     {
-        -- Hints keybinds
+        -- Hints keybinds - Shows keyboard shortcuts when pressing leader
         'folke/which-key.nvim',
         opts = {
             -- win = {
