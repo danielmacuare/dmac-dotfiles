@@ -32,4 +32,5 @@ require('lazy').setup {
   require 'plugins.misc',
   require 'plugins.vim-tmux-navigator',
   require 'plugins.noice',
+  require 'plugins.trouble',
 }
