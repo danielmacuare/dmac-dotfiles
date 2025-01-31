@@ -1,3 +1,5 @@
+-- Purpose: Welcome Dashboard for Neovim
+-- Link: https://github.com/goolord/alpha-nvim
 -- ASCII Arts: https://github.com/MaximilianLloyd/ascii.nvim
 
 return {

@@ -1,3 +1,6 @@
+-- Purpose: Provides default Nvim LSP client configurations for various LSP servers.
+-- Link: https://github.com/neovim/nvim-lspconfig/tree/master
+
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {

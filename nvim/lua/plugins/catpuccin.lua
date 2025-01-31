@@ -1,11 +1,14 @@
+-- Purpose: colorscheme for neovim
+-- Link: https://github.com/catppuccin/nvim
+
 return {
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
+        'catppuccin/nvim',
+        name = 'catppuccin',
         priority = 1000,
         config = function()
-            require("catppuccin").setup({
-                flavour = "mocha", -- Options: latte, frappe, macchiato, mocha
+            require('catppuccin').setup {
+                flavour = 'mocha', -- Options: latte, frappe, macchiato, mocha
                 -- https://github.com/catppuccin/nvim#integrations
                 integrations = {
                     --cmp = true,
@@ -17,15 +20,15 @@ return {
                     notify = false,
                     mini = {
                         enabled = true,
-                        indentscope_color = "",
+                        indentscope_color = '',
                     },
                     telescope = {
                         enabled = true,
                         -- style = "nvchad"
                     },
                 },
-            })
-            vim.cmd.colorscheme "catppuccin"
+            }
+            vim.cmd.colorscheme 'catppuccin'
         end,
-    }
+    },
 }

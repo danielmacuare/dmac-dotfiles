@@ -1,4 +1,6 @@
--- Format on save and linters
+-- Purpose: Config used to provide auto-formatting. None-ls provides code actions, diagnostics, etc for LSP clients
+-- Link: https://github.com/nvimtools/none-ls.nvim
+
 return {
     'nvimtools/none-ls.nvim',
     dependencies = {
