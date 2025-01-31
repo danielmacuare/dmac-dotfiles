@@ -1,3 +1,6 @@
+-- Purpose: A tool that will create windows to show diagnostics, references, telescope results, etc
+-- Link: https://github.com/folke/trouble.nvim
+
 return {
     'folke/trouble.nvim',
     opts = {}, -- for default options, refer to the configuration section for custom setup.
