@@ -23,6 +23,7 @@ return { -- Autocompletion
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
 
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
@@ -60,7 +61,6 @@ return { -- Autocompletion
       Operator = '󰆕',
       TypeParameter = '󰊄',
     }
-
     cmp.setup {
       snippet = {
         expand = function(args)
@@ -139,5 +139,27 @@ return { -- Autocompletion
         end,
       },
     }
+
+    -- Autocompletion for search and command execution
+    cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' },
+      },
+    })
+
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' },
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmds = { 'Man', '!' },
+          },
+        },
+      }),
+    })
   end,
 }
