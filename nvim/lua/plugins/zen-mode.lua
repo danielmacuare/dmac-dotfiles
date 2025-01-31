@@ -1,5 +1,7 @@
 -- Purpose: This plugin adds indentation guides to Neovim.
 -- Link: https://github.com/lukas-reineke/indent-blankline.nvim
+
+-- NOTE: Check if it's really necessary and I will be using it
 return {
   'folke/zen-mode.nvim',
   opts = {
