@@ -34,4 +34,5 @@ require('lazy').setup {
   require 'plugins.noice',
   require 'plugins.trouble',
   require 'plugins.todo-comments',
+  require 'plugins.zen-mode',
 }
