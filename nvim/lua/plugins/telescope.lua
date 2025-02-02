@@ -1,6 +1,6 @@
 -- Purpose: Fuzzy Finder (files, lsp, etc)
--- Link:
---
+-- Link: https://github.com/nvim-telescope/telescope.nvim
+
 return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
@@ -31,8 +31,8 @@ return {
         mappings = {
           i = {
             ['<C-k>'] = actions.move_selection_previous, -- move to prev result
-            ['<C-j>'] = actions.move_selection_next,     -- move to next result
-            ['<C-l>'] = actions.select_default,          -- open file
+            ['<C-j>'] = actions.move_selection_next, -- move to next result
+            ['<C-l>'] = actions.select_default, -- open file
           },
           n = {
             ['q'] = actions.close,
