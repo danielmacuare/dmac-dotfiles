@@ -1,3 +1,6 @@
+-- Purpose: Navigation bar for browse the filesystem in Neovim
+-- Link: https://github.com/nvim-neo-tree/neo-tree.nvim
+
 return {
   'nvim-neo-tree/neo-tree.nvim',
   event = 'VeryLazy',
