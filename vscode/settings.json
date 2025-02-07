@@ -1,0 +1,71 @@
+{
+    "workbench.colorTheme": "Predawn GF Markdown",
+    "workbench.settings.editor": "json",
+    "files.eol": "\n",
+    // EDITOR
+    // https://stackoverflow.com/questions/29972396/how-can-i-customize-the-tab-to-space-conversion-factor
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.cursorSurroundingLines": 4,
+    "editor.fontFamily": "MesloLGSDZ Nerd Font Mono",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "[scss]": {
+        "editor.formatOnSave": false
+    },
+    "[jinja-html]": {
+        "editor.formatOnSave": false
+    },
+    "[yaml]": {
+        "editor.formatOnSave": false
+    },
+    "editor.formatOnSaveMode": "file",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    // TERMINAL
+    "terminal.integrated.fontSize": 14,
+    // PYTHON
+    // Black Formatting
+    "python.formatting.provider": "black",
+    // Pylint
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.maxNumberOfProblems": 50,
+    // Others
+    // "python.analysis.typeCheckingMode": "strict",
+    // VIM
+    "vim.smartRelativeLine": true,
+    "workbench.iconTheme": "ayu",
+    "window.zoomLevel": 1,
+    "[python]": {
+        "editor.formatOnType": true,
+    },
+    // Prettier
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+    // Mypy
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": [
+        "--ignore-missing-imports",
+        "--follow-imports=silent",
+        "--show-column-numbers",
+        "--allow-untyped-defs",
+        "--allow-subclassing-any",
+        "--allow-untyped-calls",
+        "--strict"
+    ],
+    "explorer.confirmDelete": false,
+    "cSpell.userWords": [
+        "danielmacuare",
+        "Fastly",
+        "netbox",
+        "secho",
+        "Typer",
+        "webp"
+    ],
+    "redhat.telemetry.enabled": false,
+    "ansible.validation.lint.enabled": false,
+    "update.showReleaseNotes": false
+}
