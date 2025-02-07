@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# TODO: Fix colors.sh scripts
-# TODO: Sketchybar is not starting when aerospace starts
-#source ../colors.sh
-#source $CONFIG_DIR/colors.sh
-
 sketchybar --add event aerospace_workspace_change
 
 for sid in $(aerospace list-workspaces --all); do
