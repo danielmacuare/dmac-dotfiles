@@ -182,11 +182,13 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
 2 = 'main'                       # Main monitor
-4 = 'secondary'                     
-6 = 'main'                     
+4 = 'main'                     
+B = 'main'
+6 = 'secondary'                     
 8 = 'secondary'                     
-T = 'secondary'
+C = 'secondary'
 N = 'secondary'
+T = 'secondary'
 
 
 ## APP-Workspace Assigment
