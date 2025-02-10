@@ -13,12 +13,11 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-    autojump
-	#copypath
-	git
-	#terraform
-	zsh-syntax-highlighting
-	zsh-autosuggestions
+    #copypath
+    git
+    #terraform
+    zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 
 # IMPORTANT: Source and export should always go after the plugins section
@@ -118,3 +117,6 @@ bindkey '^[[B' history-search-forward # Escape Sequence for Down Arrow
 # zsh-autosuggestions
 bindkey '`' autosuggest-execute # Tick to accept zsh suggestions
 bindkey '\t\t' forward-word	# Double tap to accept word forward zsh auto-suggestions
+
+# Zoxide
+eval "$(zoxide init zsh)"
