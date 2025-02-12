@@ -1,6 +1,6 @@
 # Dotfiles
 
-This repository contains my personal dotfiles and system configuration, managed with GNU Stow and protected by pre-commit hooks.
+This repository contains my personal dotfiles and system configuration. I don't currently use a dotfiles manager to automate the process of deploying these dotfiles.
 
 ## Prerequisites
 
@@ -8,7 +8,6 @@ Before you begin, ensure you have the following installed:
 
 - Git
 - Python UV (for managing Python packages)
-
 
 ### 3. Install Pre-commit Hooks
 
@@ -48,4 +47,5 @@ The repository includes a `.pre-commit-config.yaml` file that checks for:
 - Gitleaks - Secrets leaked before commit
 
 ### Notes
-- For tmux, after creating the simlyink, you need to open tmux and install it's plugins using `tmux-prefix + r`
+
+- For tmux, after creating the symlink, you need to open tmux and install its plugins using `tmux-prefix + r`
