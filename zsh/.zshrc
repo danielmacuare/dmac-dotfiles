@@ -41,6 +41,7 @@ source $ZSH/oh-my-zsh.sh
 # For zsh-autosuggestion
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=#000000,bold,underline"
 
+
 # Command-not-found plugin
 # https://github.com/Homebrew/homebrew-command-not-found#install
 HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
@@ -67,6 +68,7 @@ export MANWIDTH=999
 
 # VSCode points to /opt/homebrew/ instead of /usr/local/bin
 export PATH=/usr/local/bin:${PATH}
+
 
 # Ruby for Jekyll
 eval "$(rbenv init - zsh)"
@@ -120,3 +122,16 @@ bindkey '\t\t' forward-word	# Double tap to accept word forward zsh auto-suggest
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# Created by `pipx` on 2025-07-24 12:13:39
+export PATH="$PATH:/Users/dmac/.local/bin"
+
+# [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# https://github.com/kirodotdev/Kiro/issues/1393# 
+if [[ $TERM_PROGRAM == "kiro" ]]; then
+  source "$(kiro --locate-shell-integration-path zsh)"
+else
+  :   # Placeholder empty command, maintain exit status as 0.
+fi
+
