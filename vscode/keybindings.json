@@ -31,4 +31,112 @@
         "key": "ctrl+j",
         "command": "workbench.action.navigateDown"
     },
+    {
+        "key": "ctrl+shift+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+cmd+]",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.extension.geminiChat",
+        "when": "viewContainer.workbench.view.extension.geminiChat.enabled && !runningOnCloudShell"
+    },
+    {
+        "key": "alt+cmd+g",
+        "command": "-workbench.view.extension.geminiChat",
+        "when": "viewContainer.workbench.view.extension.geminiChat.enabled && !runningOnCloudShell"
+    },
+    {
+        "key": "shift+cmd+a",
+        "command": "geminicodeassist.editor.addSelectionToChatContext",
+        "when": "!terminalTextSelectedInFocused"
+    },
+    {
+        "key": "alt+cmd+x",
+        "command": "-geminicodeassist.editor.addSelectionToChatContext",
+        "when": "!terminalTextSelectedInFocused"
+    },
+    {
+        "key": "shift+cmd+a",
+        "command": "geminicodeassist.terminal.addSelectionToChatContext",
+        "when": "terminalTextSelectedInFocused"
+    },
+    {
+        "key": "alt+cmd+x",
+        "command": "-geminicodeassist.terminal.addSelectionToChatContext",
+        "when": "terminalTextSelectedInFocused"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "shift+cmd+a",
+        "command": "github.copilot.chat.attachSelection"
+    },
+    {
+        "key": "shift+cmd+i",
+        "command": "workbench.action.chat.toggle"
+    },
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f10",
+        "command": "-workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "f11",
+        "command": "-workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "shift+cmd+space",
+        "command": "workbench.action.debug.pause",
+        "when": "debugState == 'running'"
+    },
+    {
+        "key": "f6",
+        "command": "-workbench.action.debug.pause",
+        "when": "debugState == 'running'"
+    }
 ]

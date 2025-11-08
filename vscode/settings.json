@@ -1,7 +1,10 @@
 {
-    "workbench.colorTheme": "Predawn GF Markdown",
+    "workbench.colorTheme": "Dark-Dracula",
     "workbench.settings.editor": "json",
+    "workbench.sideBar.location": "right",
+    "workbench.list.openMode": "singleClick",
     "files.eol": "\n",
+    "files.autoSave": "onFocusChange",
     // EDITOR
     // https://stackoverflow.com/questions/29972396/how-can-i-customize-the-tab-to-space-conversion-factor
     "editor.insertSpaces": true,
@@ -10,41 +13,37 @@
     "editor.cursorSurroundingLines": 4,
     "editor.fontFamily": "MesloLGSDZ Nerd Font Mono",
     "editor.fontSize": 16,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSaveMode": "file",
     "[scss]": {
         "editor.formatOnSave": false
     },
     "[jinja-html]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true
     },
+    "yaml.format.enable": true,
     "[yaml]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": true,
     },
-    "editor.formatOnSaveMode": "file",
+    // Avoid removing comments from Enhanced TOML Extension
+    "[toml]": {
+        "editor.formatOnSave": false,
+    },
     "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
+        "source.organizeImports": "explicit",
+        "source.fixAll": "never",
     },
     // TERMINAL
     "terminal.integrated.fontSize": 14,
     // PYTHON
     // Black Formatting
-    "python.formatting.provider": "black",
+    // "python.formatting.provider": "black",
     // Pylint
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.maxNumberOfProblems": 50,
+    //"python.linting.enabled": true,
+    //"python.linting.pylintEnabled": true,
+    //"python.linting.maxNumberOfProblems": 50,
     // Others
-    // "python.analysis.typeCheckingMode": "strict",
-    // VIM
-    "vim.smartRelativeLine": true,
-    "workbench.iconTheme": "ayu",
-    "window.zoomLevel": 1,
-    "[python]": {
-        "editor.formatOnType": true,
-    },
-    // Prettier
-    "prettier.tabWidth": 4,
-    "prettier.useTabs": true,
     // Mypy
     "python.linting.mypyEnabled": true,
     "python.linting.mypyArgs": [
@@ -56,6 +55,28 @@
         "--allow-untyped-calls",
         "--strict"
     ],
+    "ruff.importStrategy": "useBundled",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            // "source.fixAll": "explicit"
+            "source.organizeImports": "explicit"
+        },
+        "editor.inlayHints.enabled": "offUnlessPressed"
+    },
+    // Disabling PYLANCE
+    // https://pypi.org/project/basedpyright/1.2.0/#:~:text=disable%20pylance's%20type%2Dchecking%20by,displayed%20by%20the%20basedpyright%20extension.
+    "python.analysis.typeCheckingMode": "off",
+    "intellicode.python.enabled": false, // Intellicode won't work if pylance is disabled
+    // "basedpyright.disableLanguageServices": true,
+    // VIM
+    "vim.smartRelativeLine": true,
+    "workbench.iconTheme": "containerlab-icons",
+    "window.zoomLevel": 1,
+    // Prettier
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
     "explorer.confirmDelete": false,
     "cSpell.userWords": [
         "danielmacuare",
@@ -67,5 +88,24 @@
     ],
     "redhat.telemetry.enabled": false,
     "ansible.validation.lint.enabled": false,
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": false,
+    // COPILOT
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "python": false
+    },
+    "workbench.editor.openSideBySideDirection":"right",
+    "workbench.editor.openPositioning":"right",
+    "github.copilot.chat.terminalChatLocation": "terminal",
+    // GEMINI
+    "geminicodeassist.updateChannel": "Insiders",
+    "geminicodeassist.enableTelemetry": false,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "hediet.vscode-drawio.resizeImages": null,
+    // CLAB - ORB Hypervisor
+    "containerlab.remote.hostname": "containerlab-vm.orb.local",
+    "github.copilot.nextEditSuggestions.enabled": true
 }
