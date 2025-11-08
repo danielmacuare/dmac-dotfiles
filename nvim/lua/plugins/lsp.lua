@@ -229,13 +229,26 @@ return { -- LSP Configuration & Plugins
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format lua code
+      -- Note: stylua is NOT managed by Mason due to a bug where Mason tries to run it as an LSP
+      -- Install stylua manually: cargo install stylua OR brew install stylua
+      'prettier', -- JS/TS/JSON/YAML/Markdown formatter
+      'shfmt', -- Shell formatter
+      'ruff', -- Python formatter and linter
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
+      -- Explicitly set which servers to auto-configure (exclude formatters like stylua)
+      automatic_installation = {
+        exclude = { 'stylua' },
+      },
       handlers = {
         function(server_name)
+          -- Skip stylua - it's a formatter, not an LSP server
+          if server_name == 'stylua' then
+            return
+          end
+
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling
