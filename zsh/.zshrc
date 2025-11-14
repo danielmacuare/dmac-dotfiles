@@ -135,3 +135,5 @@ else
   :   # Placeholder empty command, maintain exit status as 0.
 fi
 
+# Chromaterm
+ssh() { /usr/bin/ssh "$@" | ct; }
