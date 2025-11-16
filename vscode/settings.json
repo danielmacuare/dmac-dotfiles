@@ -25,8 +25,18 @@
     "yaml.format.enable": true,
     "[yaml]": {
         "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "editor.defaultFormatter": "bluebrown.yamlfmt",
+        //"editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     // Avoid removing comments from Enhanced TOML Extension
+    // MD Files
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.formatOnSave": true,
+    },
+    "markdownlint.config": { "default": true },
+    // TOML
     "[toml]": {
         "editor.formatOnSave": false,
     },
