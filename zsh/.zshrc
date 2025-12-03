@@ -14,7 +14,6 @@ fi
 
 
 # ---- PLUGINS & THEMES ----
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
@@ -34,27 +33,14 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh # This loads compinit
 
-# Load environment variables
+# ---- EXPORTS ----
 source ~/.config/zsh/exports.zsh
 
 
-## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-## ---- PLUGINS CONFIG ----
-
-# For zsh-autosuggestion
-#export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=#000000,bold,underline"
-
+# ---- PLUGINS CONFIG ----
 
 # ZSH Autosuggestions
 typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=248'
-
-
-# --- SOURCE STYLING FOR ZSH COMPLETIONS ---
-source ~/.config/zsh/completion.zsh
-
 
 # Command-not-found plugin
 # https://github.com/Homebrew/homebrew-command-not-found#install
@@ -64,24 +50,44 @@ if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
 fi
 
 
-### Sourcing files
-source $XDG_CONFIG_HOME/others/.aliases
+# ---- SOURCING FILES ----
 
+# ZSH Completions
+if [ -f "$XDG_CONFIG_HOME/zsh/completion.zsh" ]; then
+    source "$XDG_CONFIG_HOME/zsh/completion.zsh"
+else
+    echo "File $XDG_CONFIG_HOME/zsh/completion.zsh doesn't exist"
+fi
+
+# Custom Aliases
+if [ -f "$XDG_CONFIG_HOME/others/.aliases" ]; then
+    source "$XDG_CONFIG_HOME/others/.aliases"
+else
+    echo "File $XDG_CONFIG_HOME/others/.aliases doesn't exist"
+fi
+
+# Custom Functions
 if [ -f "$HOME/.custom_functions" ]; then
     source "$HOME/.custom_functions"
 else
     echo "File $HOME/.custom_functions doesn't exists"
 fi
 
+# Sourcing Powerlevel 10K
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 
 # ---- CUSTOM KEYBINDS ----
-# Load keybindings from separate file
-if [ -f "$HOME/.config/zsh/custom-keybinds.zsh" ]; then
-    source "$HOME/.config/zsh/custom-keybinds.zsh"
+
+if [ -f "$XDG_CONFIG_HOME/zsh/custom-keybinds.zsh" ]; then
+    source "$XDG_CONFIG_HOME/zsh/custom-keybinds.zsh"
+else
+    echo "File $XDG_CONFIG_HOME/zsh/custom-keybinds.zsh doesn't exists"
 fi
+
+
+# ---- OTHERS ----
 
 # Ruby for Jekyll
 eval "$(rbenv init - zsh)"
-
-# Chromaterm
-ssh() { /usr/bin/ssh "$@" | ct; }
