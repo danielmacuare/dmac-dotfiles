@@ -1,0 +1,8 @@
+# TARGET = ~/.config/others/.aliases
+alias cat=bat
+alias vim=nvim
+alias sed=gsed
+alias l="lsd -lahF"
+alias csnap="silicon --from-clipboard -l rs --to-clipboard --background #000000 --theme Dracula"
+#Fields can be found using "docker container ls --format='{{json .}}'"
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"'

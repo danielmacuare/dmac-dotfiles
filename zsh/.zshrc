@@ -9,6 +9,7 @@ fi
 
 
 # ---- FZF AUTO-COMPLETION ----
+# Don;t move from here. It needs to be at the top
 # This allows to use fzf for Ctrl+r and Ctrl+t but lets fzf-tab take over the TAB key later.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -34,7 +35,7 @@ export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh # This loads compinit
 
 # ---- EXPORTS ----
-source ~/.config/zsh/exports.zsh
+source $XDG_CONFIG_HOME/zsh/exports.zsh
 
 
 # ---- PLUGINS CONFIG ----
@@ -60,17 +61,17 @@ else
 fi
 
 # Custom Aliases
-if [ -f "$XDG_CONFIG_HOME/others/.aliases" ]; then
-    source "$XDG_CONFIG_HOME/others/.aliases"
+if [ -f "$XDG_CONFIG_HOME/zsh/custom_aliases.zsh" ]; then
+    source "$XDG_CONFIG_HOME/zsh/custom_aliases.zsh"
 else
-    echo "File $XDG_CONFIG_HOME/others/.aliases doesn't exist"
+    echo "File $XDG_CONFIG_HOME/zsh/custom_aliases.zsh doesn't exist"
 fi
 
 # Custom Functions
-if [ -f "$HOME/.custom_functions" ]; then
-    source "$HOME/.custom_functions"
+if [ -f "$XDG_CONFIG_HOME/zsh/custom_functions.zsh" ]; then
+    source "$XDG_CONFIG_HOME/zsh/custom_functions.zsh"
 else
-    echo "File $HOME/.custom_functions doesn't exists"
+    echo "File $XDG_CONFIG_HOME/zsh/custom_functions.zsh doesn't exists"
 fi
 
 # Sourcing Powerlevel 10K
@@ -78,12 +79,12 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-# ---- CUSTOM KEYBINDS ----
+# ---- CUSTOM_KEYBINDS ----
 
-if [ -f "$XDG_CONFIG_HOME/zsh/custom-keybinds.zsh" ]; then
-    source "$XDG_CONFIG_HOME/zsh/custom-keybinds.zsh"
+if [ -f "$XDG_CONFIG_HOME/zsh/custom_keybinds.zsh" ]; then
+    source "$XDG_CONFIG_HOME/zsh/custom_keybinds.zsh"
 else
-    echo "File $XDG_CONFIG_HOME/zsh/custom-keybinds.zsh doesn't exists"
+    echo "File $XDG_CONFIG_HOME/zsh/custom_keybinds.zsh doesn't exists"
 fi
 
 
