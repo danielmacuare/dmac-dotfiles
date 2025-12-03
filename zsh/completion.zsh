@@ -19,3 +19,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Switch groups using comma and dot
 zstyle ':fzf-tab:*' switch-group ',' '.'
+
+# Pop up feature for tmux> 3.2
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
