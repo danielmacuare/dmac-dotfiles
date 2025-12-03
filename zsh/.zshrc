@@ -1,4 +1,4 @@
-# TARGET=~/.zshrc            
+# TARGET=~/.zshrc
 
 # end-of-line Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -8,17 +8,24 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
+# ---- FZF AUTO-COMPLETION ----
+# This allows to use fzf for Ctrl+r and Ctrl+t but lets fzf-tab take over the TAB key later.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 # ---- PLUGINS & THEMES ----
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-    #copypath
     git
-    #terraform
     zsh-syntax-highlighting
     zsh-autosuggestions
+    fzf-tab # Shows you the fzf results of the completion syste
 )
+
+# Add zsh-completions to fpath - This loads the completions data
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # IMPORTANT: Source and export should always go after the plugins section
 # Link: https://stackoverflow.com/questions/15682456/oh-my-zsh-config-file-not-loading/15882090#15882090
@@ -29,7 +36,7 @@ export DMAC="wezterm"
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh # This loads compinit
 
 
 ## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -39,7 +46,15 @@ source $ZSH/oh-my-zsh.sh
 ## ---- PLUGINS CONFIG ----
 
 # For zsh-autosuggestion
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=#000000,bold,underline"
+#export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=#000000,bold,underline"
+
+
+# ZSH Autosuggestions
+typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=248'
+
+
+# --- SOURCE STYLING FOR ZSH COMPLETIONS ---
+source ~/.config/zsh/completion.zsh
 
 
 # Command-not-found plugin
@@ -49,8 +64,6 @@ if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
   source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
 fi
 
-# fzf auto-completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ### Sourcing files
 source $XDG_CONFIG_HOME/others/.aliases
@@ -59,6 +72,13 @@ if [ -f "$HOME/.custom_functions" ]; then
     source "$HOME/.custom_functions"
 else
     echo "File $HOME/.custom_functions doesn't exists"
+fi
+
+
+# ---- CUSTOM KEYBINDS ----
+# Load keybindings from separate file
+if [ -f "$HOME/.config/zsh/custom-keybinds.zsh" ]; then
+    source "$HOME/.config/zsh/custom-keybinds.zsh"
 fi
 
 # Man pages with bat
@@ -72,68 +92,6 @@ export PATH=/usr/local/bin:${PATH}
 
 # Ruby for Jekyll
 eval "$(rbenv init - zsh)"
-
-# Custom Functions (To be taken out of here)
-funct xp () {
-    if [ ! -z $1 ]; then
-        current_directory=$1
-    else
-        current_directory='.'
-    fi
-    source $HOME/custom_scripts/fzf_explorer.sh
-}
-
-# To bypass ZSHR intial log message about this
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-# UV Python auto-completion
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
-
-# History setup
-HISTSIZE=10000 # Commands to be saved in our history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase # Will delete any duplicate entry
-HISTFILE=$HOME/.zhistory
-
-# https://linux.die.net/man/1/zshoptions
-setopt append_history
-setopt share_history
-setopt hist_ignore_space # Will not add any command that is prefixed with space to the history
-setopt hist_ignore_all_dups
-setopt hist_ignore_dups
-setopt hist_save_no_dups
-setopt hist_find_no_dups
-setopt hist_expire_dups_first
-setopt hist_verify
-
-# TMUX
-# Tmux https://github.com/zsh-users/zsh-autosuggestions/issues/229
-export TERM=xterm-256color
-
-# ---- CUSTOM KEYBINDS ----
-# history
-bindkey '^[[A' history-search-backward # Escape Sequence for UP Arrow
-bindkey '^[[B' history-search-forward # Escape Sequence for Down Arrow
-
-# zsh-autosuggestions
-bindkey '`' autosuggest-execute # Tick to accept zsh suggestions
-bindkey '\t\t' forward-word	# Double tap to accept word forward zsh auto-suggestions
-
-# Zoxide
-eval "$(zoxide init zsh)"
-
-# Created by `pipx` on 2025-07-24 12:13:39
-export PATH="$PATH:/Users/dmac/.local/bin"
-
-# [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
-# https://github.com/kirodotdev/Kiro/issues/1393# 
-if [[ $TERM_PROGRAM == "kiro" ]]; then
-  source "$(kiro --locate-shell-integration-path zsh)"
-else
-  :   # Placeholder empty command, maintain exit status as 0.
-fi
 
 # Chromaterm
 ssh() { /usr/bin/ssh "$@" | ct; }
