@@ -30,13 +30,12 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 # IMPORTANT: Source and export should always go after the plugins section
 # Link: https://stackoverflow.com/questions/15682456/oh-my-zsh-config-file-not-loading/15882090#15882090
 
-# Wezterm
-export TERM="wezterm"
-export DMAC="wezterm"
-
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh # This loads compinit
+
+# Load environment variables
+source ~/.config/zsh/exports.zsh
 
 
 ## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -80,15 +79,6 @@ fi
 if [ -f "$HOME/.config/zsh/custom-keybinds.zsh" ]; then
     source "$HOME/.config/zsh/custom-keybinds.zsh"
 fi
-
-# Man pages with bat
-#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANPAGER='nvim +Man!'
-export MANWIDTH=999
-
-# VSCode points to /opt/homebrew/ instead of /usr/local/bin
-export PATH=/usr/local/bin:${PATH}
-
 
 # Ruby for Jekyll
 eval "$(rbenv init - zsh)"
