@@ -1,4 +1,5 @@
 # TARGET = ~/.config/others/.aliases
+alias cd="z"
 alias cat=bat
 alias vim=nvim
 alias sed=gsed
