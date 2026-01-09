@@ -1,0 +1,21 @@
+{
+  "runtime.version": "LuaJIT",
+  "runtime.path": [
+    "?.lua",
+    "?/init.lua"
+  ],
+  "diagnostics.globals": [
+    "vim",
+    "use",
+    "describe",
+    "it",
+    "assert",
+    "stub"
+  ],
+  "workspace.library": [
+    "${3rd}/luv/library",
+    "${3rd}/busted/library"
+  ],
+  "workspace.checkThirdParty": false,
+  "telemetry.enable": false
+}
