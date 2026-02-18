@@ -9,3 +9,6 @@ alias csnap="silicon --from-clipboard -l rs --to-clipboard --background #000000 
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"'
 alias ip4="curl ifconfig.me"
 alias please='sudo $(history -p !!)'
+alias cco="npx @ccusage/opencode@latest"
+alias cc="npx ccusage@latest"
+alias tfu="terraform force-unlock"
