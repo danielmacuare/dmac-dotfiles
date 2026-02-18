@@ -18,7 +18,9 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
+    aws
     git
+    terraform
     zsh-syntax-highlighting
     zsh-autosuggestions
     fzf-tab # Shows you the fzf results of the completion syste
@@ -101,3 +103,19 @@ setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
+
+# opencode
+export PATH=/Users/dmac/.opencode/bin:$PATH
+
+# Added by Windsurf
+export PATH="/Users/dmac/.codeium/windsurf/bin:$PATH"
+
+# AWS Profile
+export AWS_PROFILE=AWS-DEV-EUW2
+
+# bun completions
+[ -s "/Users/dmac/.bun/_bun" ] && source "/Users/dmac/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
