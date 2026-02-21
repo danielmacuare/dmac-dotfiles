@@ -55,16 +55,16 @@
     //"python.linting.maxNumberOfProblems": 50,
     // Others
     // Mypy
-    "python.linting.mypyEnabled": true,
-    "python.linting.mypyArgs": [
-        "--ignore-missing-imports",
-        "--follow-imports=silent",
-        "--show-column-numbers",
-        "--allow-untyped-defs",
-        "--allow-subclassing-any",
-        "--allow-untyped-calls",
-        "--strict"
-    ],
+    // "python.linting.mypyEnabled": true,
+    // "python.linting.mypyArgs": [
+        // "--ignore-missing-imports",
+        // "--follow-imports=silent",
+        // "--show-column-numbers",
+        // "--allow-untyped-defs",
+        // "--allow-subclassing-any",
+        // "--allow-untyped-calls",
+        // "--strict"
+    // ],
     "ruff.importStrategy": "useBundled",
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
@@ -96,26 +96,22 @@
         "Typer",
         "webp"
     ],
+    // OTHERS
+    "workbench.editor.openSideBySideDirection":"right",
+    "workbench.editor.openPositioning":"right",
     "redhat.telemetry.enabled": false,
     "ansible.validation.lint.enabled": false,
     "update.showReleaseNotes": false,
-    // COPILOT
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false,
-        "python": false
-    },
-    "workbench.editor.openSideBySideDirection":"right",
-    "workbench.editor.openPositioning":"right",
-    "github.copilot.chat.terminalChatLocation": "terminal",
     // GEMINI
     "geminicodeassist.updateChannel": "Insiders",
     "geminicodeassist.enableTelemetry": false,
     "workbench.secondarySideBar.defaultVisibility": "visible",
     "hediet.vscode-drawio.resizeImages": null,
+    "geminicodeassist.project": "macro-abode-hvmxc",
+    "geminicodeassist.inlineSuggestions.enableAuto": false,
+    "geminicodeassist.displayInlineContextHint": false,
     // CLAB - ORB Hypervisor
     "containerlab.remote.hostname": "containerlab-vm.orb.local",
-    "github.copilot.nextEditSuggestions.enabled": true
+    "containerlab.showWelcomePage": false,
+    "claudeCode.preferredLocation": "panel"
 }

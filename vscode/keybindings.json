@@ -110,7 +110,7 @@
         "command": "workbench.action.chat.toggle"
     },
     {
-        "key": "cmd+l",
+        "key": "ctrl+shift+alt+cmd+l",
         "command": "workbench.action.debug.stepOver",
         "when": "debugState == 'stopped'"
     },
@@ -120,7 +120,7 @@
         "when": "debugState == 'stopped'"
     },
     {
-        "key": "shift+cmd+l",
+        "key": "ctrl+shift+alt+cmd+i",
         "command": "workbench.action.debug.stepInto",
         "when": "debugState != 'inactive'"
     },
@@ -138,5 +138,55 @@
         "key": "f6",
         "command": "-workbench.action.debug.pause",
         "when": "debugState == 'running'"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "outline.focus"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "editor.action.toggleWordWrap"
+    },
+    {
+        "key": "alt+z",
+        "command": "-editor.action.toggleWordWrap"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+o",
+        "command": "workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+f11",
+        "command": "-workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "ctrl+shift+alt+cmd+space",
+        "command": "workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "cmd+o",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
     }
 ]
